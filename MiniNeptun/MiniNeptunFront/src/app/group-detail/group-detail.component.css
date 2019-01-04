@@ -1,0 +1,8 @@
+h1 {text-align: left}
+.admin {margin-left: 10px; margin-bottom: 10px}
+.admin button {margin: 10px 10px;}
+.mat-list-base {padding-top: 10px;}
+.mat-flat-button.mat-primary {
+    background: #0c88db;
+    color: #fff;
+  }

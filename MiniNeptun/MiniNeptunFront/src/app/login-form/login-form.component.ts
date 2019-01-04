@@ -1,0 +1,51 @@
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+import { Validators, FormBuilder } from '@angular/forms';
+
+@Component({
+  selector: 'login-form',
+  templateUrl: './login-form.component.html',
+  styleUrls: ['./login-form.component.css']
+})
+export class LoginFormComponent implements OnInit {
+
+  message: string;
+  hidePassword = true;
+  loginForm = this.formBuilder.group({
+    username: ['', [Validators.required]],
+    password: ['', [Validators.required]],
+  });
+
+  get username() { return this.loginForm.get('username');}
+  get password() { return this.loginForm.get('password');}
+  
+  constructor(
+    private authService: AuthService,
+    private formBuilder: FormBuilder,
+    private router: Router
+  ) { }
+
+  ngOnInit() {
+
+  }
+
+  async onSubmit() {
+    try {
+      this.message = null;
+      
+      await this.authService.login(this.loginForm.get('username').value,this.loginForm.get('password').value);
+      if (this.authService.redirectUrl) {
+        this.router.navigate([this.authService.redirectUrl]);
+      } else {
+        this.router.navigate(['/']);
+      }
+    } catch (e) {
+      this.message = 'Rossz felhasználónév vagy jelszó!';
+    }
+  }
+
+
+
+}
+

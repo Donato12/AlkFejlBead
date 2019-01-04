@@ -1,0 +1,49 @@
+<h1 *ngIf="subject">Csoportok: {{subject.name}}  </h1>
+
+<div *ngIf="authService.user.roleId == 'ROLE_ADMIN'" class="admin">
+    <button mat-flat-button type="button" color="primary" routerLink="/subjects/{{id}}/edit">Tárgy Szerkesztése</button>
+    <button mat-flat-button type="button" color="warn" (click)="deleteDialog()">Tárgy Törlése</button>
+  </div>
+
+<table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Tanár</th>
+            <th scope="col">Létszám</th>
+            <th scope="col">Jelentkezők</th>
+            <th scope="col">Hely</th>
+            <th scope="col">Idő</th>
+            <th scope=""></th>
+          </tr>
+        </thead>
+        <tbody *ngIf="authService.user.roleId != 'ROLE_STUDENT'">
+            <tr *ngFor="let gro of groups" routerLink="/groups/{{gro.id}}">
+              <td>{{gro.teacherName}}</td>
+              <td>{{gro.studentLimit}}</td>
+              <td>{{gro.memberCount}}</td>
+              <td>{{gro.location}}</td> 
+              <td>{{gro.timeframe}}</td> 
+              <td></td>                   
+            </tr>    
+        </tbody>
+        <tbody *ngIf="authService.user.roleId == 'ROLE_STUDENT' && takenSubject == true">
+            <tr *ngFor="let gro of groups">
+              <td>{{gro.teacherName}}</td>
+              <td>{{gro.studentLimit}}</td>
+              <td>{{gro.memberCount}}</td>
+              <td>{{gro.location}}</td> 
+              <td>{{gro.timeframe}}</td>
+              <td><button mat-flat-button *ngIf="takenGroupIds.includes(gro.id)" type="button" color="primary" (click)="dropGroup(gro.id)">Leadás</button></td>                   
+            </tr>    
+        </tbody>      
+        <tbody *ngIf="authService.user.roleId == 'ROLE_STUDENT' && takenSubject == false">
+          <tr *ngFor="let gro of groups">
+            <td>{{gro.teacherName}}</td>
+            <td>{{gro.studentLimit}}</td>
+            <td>{{gro.memberCount}}</td>
+            <td>{{gro.location}}</td> 
+            <td>{{gro.timeframe}}</td> 
+            <td><button mat-flat-button type="button" color="primary" (click)="takeGroup(gro.id)">Felvétel</button></td>
+          </tr>    
+      </tbody>            
+      </table>

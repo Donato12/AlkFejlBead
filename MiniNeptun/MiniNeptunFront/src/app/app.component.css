@@ -1,0 +1,5 @@
+mat-toolbar button {margin: 0 10px; padding: 0 10px;}
+.mat-toolbar.mat-primary {
+    background: #0c88db;
+    color: #fff;
+  }

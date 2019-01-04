@@ -1,0 +1,12 @@
+<h2>Hallgatók:</h2>
+<div *ngIf="authService.user.roleId == 'ROLE_ADMIN'">
+    <mat-list *ngFor="let user of members" >
+        
+        <mat-list-item routerLink="/profile/{{user.id}}"><mat-icon mat-list-icon>person</mat-icon> {{user.username}} - {{user.name}} </mat-list-item>
+    </mat-list>
+</div>
+<div *ngIf="authService.user.roleId != 'ROLE_ADMIN'">
+    <mat-list *ngFor="let user of members" >
+        <mat-list-item><mat-icon mat-list-icon>person</mat-icon> {{user.username}} - {{user.name}} </mat-list-item>
+    </mat-list>
+</div>

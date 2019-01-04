@@ -1,0 +1,8 @@
+<div *ngIf="authService.isLoggedIn">
+<mat-toolbar color="primary">
+  <button mat-button routerLink="/profile">Profil</button>
+  <button mat-button routerLink="/subjects">Tárgyak</button>
+  <button mat-button (click)="logout()">Kijelentkezés</button>
+</mat-toolbar>
+</div>
+<router-outlet></router-outlet>

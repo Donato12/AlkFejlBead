@@ -1,0 +1,31 @@
+<h1>Tárgyak</h1>
+
+<div *ngIf="authService.user.roleId == 'ROLE_ADMIN'" class="admin">
+  <button mat-flat-button type="button" color="primary" routerLink="/subjects/new">Új Tárgy</button>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Név</th>
+      <th scope="col">Típus</th>
+      <th scope="col">Kredit</th>
+      <th scope="col">Teljesítés</th>
+      <th scope="col">Értékelés</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let sub of showSubjects" routerLink="/subjects/{{sub.id}}">
+        <td>{{sub.name}}</td>
+        <td *ngIf="sub.type == 'TYPE_EA'">EA</td>
+        <td *ngIf="sub.type == 'TYPE_GY'">GY</td>
+        <td *ngIf="sub.type == 'TYPE_MIX'">EA+GY</td>
+        <td *ngIf="sub.type == 'TYPE_OTHER'">Egyéb</td>
+        <td>{{sub.creditValue}}</td>
+        <td *ngIf="sub.gradeMethod == 'METHOD_EXAM'">Vizsga</td>
+        <td *ngIf="sub.gradeMethod == 'METHOD_HOMEWORK'">Beadandó</td>  
+        <td *ngIf="sub.gradeMethod == 'METHOD_OTHER'">Egyéb</td> 
+        <td>{{sub.gradeValue}}</td>                   
+      </tr>    
+  </tbody>
+</table>

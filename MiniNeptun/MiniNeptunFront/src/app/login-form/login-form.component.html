@@ -1,0 +1,18 @@
+<div *ngIf="message" class="alert alert-danger">
+  {{ message }}
+</div>
+
+<h1>Bejelentkezés</h1>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput placeholder="Azonosító" formControlName="username" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Jelszó" formControlName="password" required [type]="hidePassword ? 'password' : 'text'">
+  </mat-form-field>
+
+  <div>
+    <button mat-flat-button type="submit" color="primary">Bejelentkezés</button>
+  </div>
+</form>

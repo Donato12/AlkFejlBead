@@ -1,0 +1,9 @@
+<h1 *ngIf="profile">Adatok</h1>
+<mat-list *ngIf="profile">
+    <mat-list-item>Név: {{profile.name}}</mat-list-item>
+    <mat-list-item *ngIf="profile.gender == 'GENDER_M'">Nem: Férfi</mat-list-item>
+    <mat-list-item *ngIf="profile.gender == 'GENDER_F'">Nem: Nő</mat-list-item>
+    <mat-list-item *ngIf="profile.roleId == 'ROLE_ADMIN'">Jogok: Adminisztrátor</mat-list-item>
+    <mat-list-item *ngIf="profile.roleId == 'ROLE_TEACHER'">Jogok: Tanár</mat-list-item>
+    <mat-list-item *ngIf="profile.roleId == 'ROLE_STUDENT'">Jogok: Hallgató</mat-list-item>
+</mat-list>

@@ -1,0 +1,27 @@
+<h1>{{title}}</h1>
+<form [formGroup]="subjectForm" (ngSubmit)="onSubmit()">
+
+  <mat-form-field>
+    <input matInput placeholder="Név" formControlName="name" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Típus" formControlName="type" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Kredit" formControlName="creditValue" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Jegyszerzés" formControlName="gradeMethod" required>
+  </mat-form-field>  
+
+  <mat-form-field>
+    <input matInput placeholder="Értékelés" formControlName="gradeValue" required>
+  </mat-form-field>
+
+  <div>
+    <button mat-flat-button type="submit" color="primary" [disabled]="subjectForm.invalid">Küldés</button>
+  </div>
+</form>
