@@ -50,7 +50,7 @@ Az általános JavaScript konvenciókat használtuk. Illetve a project felépít
 </ul>
 
 **Adatbázis modell:**<br />
-![Adatbázis modell](https://github.com/Donato12/MiniNeptun/blob/master/MiniNeptun/Documents/DatabaseModel.JPG)
+![Adatbázis modell](https://github.com/Donato12/AlkFejlBead/blob/master/MiniNeptun/Documents/DatabaseModel.JPG)
 
 **Végpontok:**<br />
 Belépéshez nem kötött: 
@@ -73,18 +73,15 @@ Példa Végpont:<br />
 Tantárgy törlése: Főoldal>Bejelentkezés>Tantárgyak listázása>Tantárgy törlése(Ha a felhasználó tanári szerepkörben van)<br />
 <br />
 
-**Könyvtárszerkezet:**<br />
-![Könyvtárszerkezet](https://github.com/Donato12/MiniNeptun/blob/master/MiniNeptun/Documents/Konyvtarszerkezet.png)
-
 **Drótvázterv:**<br />
-![Drótvázterv](https://github.com/Donato12/MiniNeptun/blob/master/MiniNeptun/Documents/1.PNG)
-![Drótvázterv](https://github.com/Donato12/MiniNeptun/blob/master/MiniNeptun/Documents/2.PNG)
-![Drótvázterv](https://github.com/Donato12/MiniNeptun/blob/master/MiniNeptun/Documents/3.PNG)
-![Drótvázterv](https://github.com/Donato12/MiniNeptun/blob/master/MiniNeptun/Documents/4.PNG)
-![Drótvázterv](https://github.com/Donato12/MiniNeptun/blob/master/MiniNeptun/Documents/5.PNG)
+![Drótvázterv](https://github.com/Donato12/AlkFejlBead/blob/master/MiniNeptun/Documents/1.PNG)
+![Drótvázterv](https://github.com/Donato12/AlkFejlBeadn/blob/master/MiniNeptun/Documents/2.PNG)
+![Drótvázterv](https://github.com/Donato12/AlkFejlBead/blob/master/MiniNeptun/Documents/3.PNG)
+![Drótvázterv](https://github.com/Donato12/AlkFejlBead/blob/master/MiniNeptun/Documents/4.PNG)
+![Drótvázterv](https://github.com/Donato12/AlkFejlBead/blob/master/MiniNeptun/Documents/5.PNG)
 
 **Használati eset diagramm:**<br />
-![UseCase](https://github.com/Donato12/MiniNeptun/blob/master/MiniNeptun/Documents/usecase.PNG)
+![UseCase](https://github.com/Donato12/AlkFejlBead/blob/master/MiniNeptun/Documents/usecase.PNG)
 
 **Kliensoldali szolgáltatások:**<br />
 Regisztráció: Új felhasználó létrehzoása, lehetőség an dákként és tanárként regisztrálni.<br />
